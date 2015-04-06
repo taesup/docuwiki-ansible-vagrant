@@ -1,0 +1,11 @@
+---
+  - hosts: dokuwiki_vm
+    remote_user: vagrant
+    tasks:
+      - name: install dokuwiki
+        sudo: True
+        yum: name=dokuwiki state=latest
+
+      - name: install dokuwiki selinux
+        sudo: True
+        yum: name=dokuwiki-selinux state=latest
